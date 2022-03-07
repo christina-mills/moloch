@@ -6,10 +6,11 @@ require("@nomiclabs/hardhat-truffle5");
 require("./scripts/moloch-tasks");
 require("./scripts/pool-tasks");
 
-const INFURA_API_KEY = "";
-const MAINNET_PRIVATE_KEY = "";
-const ROPSTEN_PRIVATE_KEY = "";
-const ETHERSCAN_API_KEY = "";
+const INFURA_API_KEY = "d00f341268954cc79fe46df8c67d4aa0";
+const MAINNET_PRIVATE_KEY = "61a2f2a81fa797e4e1c607185f987ba73340c094ff09d3046e69c3d3e89bc22e";
+const ROPSTEN_PRIVATE_KEY = "61a2f2a81fa797e4e1c607185f987ba73340c094ff09d3046e69c3d3e89bc22e";
+const RINKEBY_PRIVATE_KEY = "61a2f2a81fa797e4e1c607185f987ba73340c094ff09d3046e69c3d3e89bc22e";
+const ETHERSCAN_API_KEY = "NIDSFVTPUC1GQ12QSQXMYU8BZ6I8D7FCMT";
 
 module.exports = {
   networks: {
@@ -20,9 +21,17 @@ module.exports = {
         pool: ""
       }
     },
-    /* ropsten: {
+    ropsten: {
       url: `https://ropsten.infura.io/v3/${INFURA_API_KEY}`,
       accounts: [ROPSTEN_PRIVATE_KEY],
+      deployedContracts: {
+        moloch: "",
+        pool: ""
+      }
+    },
+    rinkeby: {
+      url: `https://rinkeby.infura.io/v3/${INFURA_API_KEY}`,
+      accounts: [RINKEBY_PRIVATE_KEY],
       deployedContracts: {
         moloch: "",
         pool: ""
@@ -35,7 +44,7 @@ module.exports = {
         moloch: "0x1fd169A4f5c59ACf79d0Fd5d91D1201EF1Bce9f1", // The original Moloch
         pool: ""
       }
-    }, */
+    },
     coverage: {
       url: "http://localhost:8555"
     }
